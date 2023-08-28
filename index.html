@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Finder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h2 class="text-6xl text-center font-bold">Phone Finder</h2>
+
+    </header>
+
+    <main class="max-w-screen-xl mx-auto px-2 md:px-16 lg:px-24 py-5 mt-5 space-y-5">
+        <!-- search bar -->
+        <section class="flex gap-3 justify-center">
+            <input type="text" placeholder="Search" class="input input-bordered w-full max-w-xs" id="search-field" />
+            <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+        </section>
+
+        <!-- search results -->
+        <section class="space-y-5">
+            <div class="text-sky-600 text-center hidden" id="loading-spinner">
+                <span class="loading loading-infinity loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-3">
+
+            </div>
+            <!-- show all button -->
+            <div id="show-all-container" class="hidden text-center">
+                <button onclick="showAll()" class="btn btn-active btn-accent">Show All</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="show_details_modal.showModal()">open modal</button> -->
+    <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+        <form method="dialog" class="modal-box">
+            <h3 id="phone-name" class="font-bold text-lg"></h3>
+            <div id="phone-detail-container">
+
+            </div>
+            <div class="modal-action">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="./js/phone.js"></script>
+</body>
+
+</html>
